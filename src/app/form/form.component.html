@@ -1,1 +1,46 @@
-<p>form works!</p>
+
+<label>
+	Name:
+	<input type="text" formControlName="name">
+</label>
+&nbsp;
+<br>
+<label>
+	Email:
+	<input type="text" formControlName="email">
+</label>
+&nbsp;
+<br>
+<label>
+	Feedback:
+	<label>
+	<input type="radio" value="Great" formControlName="feedback">
+	Great
+	</label>
+	<label>
+	<input type="radio" value="Okay" formControlName="feedback">
+	Okay
+	</label>
+	<label>
+	<input type="radio" value="Not Good" formControlName="feedback">
+	Not Good
+	</label>
+</label>
+&nbsp;
+<br>
+<label>
+	Comments:
+	<input type="text" formControlName="comment">
+</label>
+
+
+<button type="submit" [disabled]="!frgrp.valid">Submit</button>
+
+<form [formGroup]="frgrp" (ngsubmit)="onSubmit()">
+
+<p>
+	Form Status: {{ frgrp.status }}
+<br>
+	Form Values: {{ frgrp.value }}
+</p>
+
