@@ -1,4 +1,4 @@
-<form [formGroup]="frgrp">
+<form [formGroup]="frgrp" (ngSubmit)="onSubmit()">
 <label>
 	Name:
 	<input type="text" formControlName="name">
@@ -32,15 +32,12 @@
 	Comments:
 	<input type="text" formControlName="comment">
 </label>
-</form>
-
+<br>
 <button type="submit" [disabled]="!frgrp.valid">Submit</button>
-
-<form [formGroup]="frgrp" (ngsubmit)="onSubmit()">
-
+</form>
 <p>
 	Form Status: {{ frgrp.status }}
 <br>
-	Form Values: {{ frgrp.value }}
+	Form Values: {{ frgrp.value | json }}
 </p>
 
