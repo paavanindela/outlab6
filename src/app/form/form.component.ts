@@ -7,7 +7,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 
-export class FormComponent implements OnInit {
+export class FormComponent {
 
   constructor() { }
 
@@ -19,7 +19,6 @@ export class FormComponent implements OnInit {
   	feedback: new FormControl('',Validators.required),
 	comment: new FormControl('')
   });
-  
   onSubmit() {
 	console.warn(this.frgrp.value);
   }
