@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
@@ -21,4 +22,19 @@ export class FormComponent {
 });
 
 
+/*
+=======
+  ngOnInit(): void {
+  }
+  frgrp = new FormGroup({
+  	name: new FormControl('',Validators.required),
+  	email: new FormControl('',Validators.required),
+  	feedback: new FormControl('',Validators.required),
+	comment: new FormControl('')
+  });
+  
+  onSubmit() {
+	console.warn(this.frgrp.value);
+  }
+>>>>>>> 13a2f85991b9b7f3757b5e6462823b4c256ad2ab*/
 }
