@@ -7,7 +7,7 @@ import { EmptyComponent } from './empty/empty.component';
 const routes: Routes = [
 	{ path: 'form' , component: FormComponent },
 	{ path: 'contact', component: ContactPageComponent },
-	{ path: '', component: EmptyComponent},
+	{ path: '', children: []},
 	{ path: '**', component: ContactPageComponent }
 ];
 
