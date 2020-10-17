@@ -1,37 +1,43 @@
-input[type=text] {
-  margin: 30px;
+input[type=text], textarea {
+  
   padding: 8px 16px;
-  margin: 8px 0;
   box-sizing: border-box;
   border: 2px solid red;
-  border-radius: 4px;
+  border-radius: 4.5px;
+  width: 80%;
+  margin-top: 10px;
+}
+
+form{
+   margin-left: 17%;
 }
 .radio-toolbar {
   margin: 10px;
 }
-
-.radio-toolbar input[type="radio"] {
-  opacity: 0;
-  position: fixed;
-  width: 0;
+.element{
+ margin-top: 20px;
 }
 
-.radio-toolbar label {
-    display: inline-block;
-    background-color: #ddd;
-    padding: 10px 20px;
-    font-family: sans-serif, Arial;
-    font-size: 14px;
-    border: 2px solid #444;
-    border-radius: 4px;
+input[type="radio"]:hover {
+cursor: pointer;
 }
-
-.radio-toolbar label:hover {
-  background-color: #dfd;
+label{
+	font-size: 1.36em;
+	margin-top: 10px;
 }
+button[type="submit"]{
+	background-color: #000000;
+        width: 20%;
+	color: #ffffff;
+	height: 35px;
+	cursor: pointer;
+	margin-top: 10px;  
+        margin-left:30%;
+	font-size: 1.29em;
+	font-family: 'Sniglet', cursive;
 
-.radio-toolbar input[type="radio"]:focus + label {
-    border: 2px dashed #444;
 }
-
-
+button[type="submit"]:hover{
+	background-color: #EEE8AA;
+	color: #111111;
+}

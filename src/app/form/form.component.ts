@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { SrsService } from '../srs.service';
 
 @Component({
   selector: 'app-form',
@@ -7,11 +8,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 
-export class FormComponent {
+export class FormComponent implements OnInit{
 
-  constructor() { }
+  constructor(private srsService: SrsService) { }
 
   ngOnInit(): void {
+	this.showForm()
   }
   frgrp = new FormGroup({
   	name: new FormControl('',Validators.required),
@@ -19,6 +21,17 @@ export class FormComponent {
   	feedback: new FormControl('',Validators.required),
 	comment: new FormControl('')
   });
+  showForm() : void {
+  this.srsService.getdata()
+    .subscribe((data: any) => {
+	this.frgrp.setValue({
+		name: data.name,
+		email: data.email,
+		feedback: data.feedback,
+		comment: data.comment
+     	   });
+	});
+  }
   onSubmit() {
 	console.warn(this.frgrp.value);
   }

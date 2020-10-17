@@ -3,19 +3,24 @@
 <br>
 <form [formGroup]="frgrp" (ngSubmit)="onSubmit()">
 <label>
-	Name:
+	<div class="element">
+	Name:<br>
 	<input type="text" formControlName="name">
+	</div>
 </label>
 &nbsp;
 <br>
 <label>
-	Email:
+	<div class="element">
+	Email:<br>
 	<input type="text" formControlName="email">
+	</div>
 </label>
 &nbsp;
 <br>
 <label>
-	Feedback:
+	<div class="element">
+	Feedback:<br>
 	<div class="radio-toolbar">
 	<label>
 	<input type="radio" value="Great" formControlName="feedback">
@@ -30,15 +35,20 @@
 	Not Good
 	</label>
 	</div>
+	</div>
 </label>
 &nbsp;
 <br>
 <label>
-	Comments:
-	<input type="text" formControlName="comment">
+<div class="element">
+	Comment:<br>
+	<textarea formControlName="comment"></textarea>
+</div>
 </label>
 <br>
+<div class="element">
 <button type="submit" [disabled]="!frgrp.valid">Submit</button>
+</div>
 </form>
 <p>
 	Form Status: {{ frgrp.status }}
