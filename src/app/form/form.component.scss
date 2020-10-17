@@ -1,11 +1,12 @@
-input[type=text], textarea {
-  
+input[type=text] {
   padding: 8px 16px;
   box-sizing: border-box;
   border: 2px solid red;
   border-radius: 4.5px;
   width: 80%;
+  height: 50px;
   margin-top: 10px;
+  font-size: 0.89em;
 }
 
 form{
@@ -41,3 +42,15 @@ button[type="submit"]:hover{
 	background-color: #EEE8AA;
 	color: #111111;
 }
+
+textarea {
+  padding: 8px 16px;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4.5px;
+  width: 80%;
+  height: 150px;
+  margin-top: 10px;
+  font-size: 0.89em;
+}
+

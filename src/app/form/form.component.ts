@@ -13,7 +13,7 @@ export class FormComponent implements OnInit{
   constructor(private srsService: SrsService) { }
 
   ngOnInit(): void {
-	this.showForm()
+	this.showForm();
   }
   frgrp = new FormGroup({
   	name: new FormControl('',Validators.required),
@@ -32,7 +32,11 @@ export class FormComponent implements OnInit{
      	   });
 	});
   }
+  postForm() : void {
+    this.srsService.postdata({ "name": "saurav", "email": "sauravgarg@cse.iitb.ac.in", "feedback": "Okay", "comment": "This field can be empty :)" })
+  }
   onSubmit() {
+	this.postForm();
 	console.warn(this.frgrp.value);
   }
 }
