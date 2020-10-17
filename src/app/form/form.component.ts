@@ -15,8 +15,7 @@ export class FormComponent {
   constructor(private fb: FormBuilder) { }
   profileForm = this.fb.group({
   Name: ['', Validators.required],
-  Email: ['', Validators.compose(
-        [Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"), Validators.required])],
+  Email: ['', Validators.required],
   Feedback: ['', Validators.required],
   Comments: ['']
 });
