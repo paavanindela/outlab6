@@ -32,7 +32,10 @@ export class SrsService {
 	  catchError(this.handleError)
 	);
   }
-  postdata(){
-
+  postdata(fg : any){
+	return this.http.post(this.postUrl, fg)
+	  .pipe(
+		catchError(this.handleError)
+	);
   }
 }
