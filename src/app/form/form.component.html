@@ -3,38 +3,42 @@
   <label>
     Name: 
     <input type="text" formControlName="Name">
-  </label>
-  
+  </label>&nbsp;
+  <br>
   <label>
     Email: 
-    <input type="email" formControlName="Email">
-  </label>
+    <input type="text" formControlName="Email">
+  </label>&nbsp;
+  
   <div>
   <label>Feedback: </label>
- 
-    <div class="row">
-    <label class="md-check">
+    <div class="radio-toolbar">
+    <label>
       <input type="radio" value="Great" formControlName="Feedback">
       Great
     </label>
 
-    <label class="md-check">
+    <label>
       <input type="radio" value="Okay" formControlName="Feedback">     
       Okay
     </label>
-    <label class="md-check">
+    <label>
       <input type="radio" value="Not Good" formControlName="Feedback">     
       Not Good
     </label>
   </div>
   </div>
+  
   <label>
-    Comments:
-    <input type="textarea" formControlName="Comments">
+    Comments:<br>
+    <textarea formControlName="Comments"></textarea>
   </label>
+<div>
+<input type="submit" [disabled]="!profileForm.valid" value="submit">
+</div>
 </form>
   <p> Value: {{ profileForm.value | json }}</p>
-  <p> Status: {{ profileForm.status }} </p>
+   <p>Status: {{ profileForm.status }} </p>
 
 <!--label>
 	Name:
