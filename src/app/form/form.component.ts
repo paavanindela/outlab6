@@ -12,6 +12,7 @@ export class FormComponent implements OnInit{
 
   constructor(private srsService: SrsService) { }
   public popup: boolean;
+  private message: string;
   ngOnInit(): void {
 	this.showForm();
   }
@@ -36,11 +37,13 @@ export class FormComponent implements OnInit{
   postForm() : void {
     this.srsService.postdata(this.frgrp.value)
 	.subscribe(
-		data => console.log(data),
-		error => console.error('Error',error),
+		data => {console.log(data); this.message = "Succesfully posted form.";},
+		error => {console.error('Error',error); this.message="Unable to post form."}
 	);
   }
   onSubmit() {
+            
+    
 	this.postForm();
   }
 }
