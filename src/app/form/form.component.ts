@@ -11,7 +11,7 @@ import { SrsService } from '../srs.service';
 export class FormComponent implements OnInit{
 
   constructor(private srsService: SrsService) { }
-
+  public popup: boolean;
   ngOnInit(): void {
 	this.showForm();
   }
@@ -21,6 +21,7 @@ export class FormComponent implements OnInit{
   	feedback: new FormControl('',Validators.required),
 	comment: new FormControl('')
   });
+  
   showForm() : void {
   this.srsService.getdata()
     .subscribe((data: any) => {
@@ -33,10 +34,13 @@ export class FormComponent implements OnInit{
 	});
   }
   postForm() : void {
-    this.srsService.postdata({ "name": "saurav", "email": "sauravgarg@cse.iitb.ac.in", "feedback": "Okay", "comment": "This field can be empty :)" })
+    this.srsService.postdata(this.frgrp.value)
+	.subscribe(
+		data => console.log(data),
+		error => console.error('Error',error),
+	);
   }
   onSubmit() {
 	this.postForm();
-	console.warn(this.frgrp.value);
   }
 }

@@ -11,7 +11,7 @@ export class SrsService {
   constructor(private http: HttpClient) { }
 
   private getUrl = 'https://cs251-outlab-6.herokuapp.com/initial_values/';
-  private postUrl = 'https://webhook.site/6d9caa1d-7d9c-4a76-bbf9-aa38567d980e';
+  private postUrl = 'https://cs251-outlab-6.herokuapp.com/add_new_feedback/';
 
   private handleError(error: HttpErrorResponse) {
   if (error.error instanceof ErrorEvent) {
@@ -33,7 +33,6 @@ export class SrsService {
 	);
   }
   postdata(fg : any){
-	console.warn(fg.value);
 	return this.http.post(this.postUrl, fg)
 	  .pipe(
 		catchError(this.handleError)
