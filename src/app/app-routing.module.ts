@@ -5,6 +5,7 @@ import { ContactPageComponent} from './contact-page/contact-page.component';
 
 const routes: Routes = [
 	{ path: 'form' , component: FormComponent },
+        { path: '', children: [] },
 	{ path: 'contact', component: ContactPageComponent },
 	{ path: '**', component: ContactPageComponent }
 ];
