@@ -1,40 +1,45 @@
 <br><br>
 <form [formGroup]="profileForm" >
+  <div class="element">
   <label>
-    Name: 
+    Name: <br>
     <input type="text" formControlName="Name">
   </label>&nbsp;
-  <br>
+  </div>
+  <div class="element">
   <label>
-    Email: 
+    Email: <br> 
     <input type="text" formControlName="Email">
   </label>&nbsp;
-  
-  <div>
+  </div>
+  <div class="element">
   <label>Feedback: </label>
     <div class="radio-toolbar">
-    <label>
+    
       <input type="radio" value="Great" formControlName="Feedback">
-      Great
+    <label> 
+     Great
     </label>
 
-    <label>
+    
       <input type="radio" value="Okay" formControlName="Feedback">     
-      Okay
+    <label> 
+     Okay
     </label>
-    <label>
+    
       <input type="radio" value="Not Good" formControlName="Feedback">     
-      Not Good
+    <label> 
+     Not Good
     </label>
   </div>
   </div>
-  
+  <div class="element">
   <label>
     Comments:<br>
     <textarea formControlName="Comments"></textarea>
-  </label>
-<div>
-<input type="submit" [disabled]="!profileForm.valid" value="submit">
+  </label></div>
+<div class="element">
+<input type="submit" [disabled]="!profileForm.valid" value="Submit">
 </div>
 </form>
   <p> Value: {{ profileForm.value | json }}</p>
