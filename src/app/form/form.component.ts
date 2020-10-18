@@ -43,7 +43,7 @@ export class FormComponent implements OnInit{
   }
   onSubmit() {
             
-    
+        this.message = "";
 	this.postForm();
   }
 }
